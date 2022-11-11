@@ -7,7 +7,7 @@ import random
 import os
 cwd = os.getcwd()
 
-path_and_filename =  cwd+'\\key info.xlsx' # path to file + file name
+path_and_filename =  cwd+'\\participants.xlsx' # path to file + file name
 participants = 'participants' # sheet name or sheet number or list of sheet numbers and names
 
 #--------
@@ -324,10 +324,10 @@ if no_participants < 32:
     df_participants_and_random_teams_merged.drop(columns = ['id_participants','random_team_id','id_team_x','id_team_y'], inplace = True)
 
     df_participants_and_random_teams_merged.rename(columns = {'Equipo_x':'Equipo 1',
-                                                        'Equipo_xy':'Equipo 2'},
+                                                        'Equipo_y':'Equipo 2'},
                                                         inplace = True)
 
-    # data to excel quick!
+    # generates excel file with the outcome in the same folder
 
-    df_participants_and_random_teams_merged.to_excel("London_Bulls_WC2022_game1.xlsx",
+    df_participants_and_random_teams_merged.to_excel("World_Cup2022_game_ouput.xlsx",
                 sheet_name='Sheet_name_1',index = False)  
